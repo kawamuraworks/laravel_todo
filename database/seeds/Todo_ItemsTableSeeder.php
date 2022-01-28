@@ -20,5 +20,57 @@ class Todo_ItemsTableSeeder extends Seeder
             'is_deleted' => '0',
         ];
         DB::table('todo_items')->insert($param);
+
+        $param = [
+            'user_id' => '2',
+            'item_name' => 'テスト2',
+            'registration_date' => '2022/01/25',
+            'expire_date' => '2022/02/4',
+            'finished_date' => '2022/02/01',
+            'is_deleted' => '0',
+        ];
+        DB::table('todo_items')->insert($param);
+
+        $param = [
+            'user_id' => '1',
+            'item_name' => 'テスト',
+            'registration_date' => '2022/01/25',
+            'expire_date' => '2022/02/4',
+            'finished_date' => '2022/02/01',
+            'is_deleted' => '0',
+        ];
+        DB::table('todo_items')->insert($param);
+
+        $param = [
+            'user_id' => '1',
+            'item_name' => 'テスト',
+            'registration_date' => '2022/01/25',
+            'expire_date' => '2022/02/4',
+            'finished_date' => '2022/02/01',
+            'is_deleted' => '0',
+        ];
+        DB::table('todo_items')->insert($param);
+
+        $param = [
+            'user_id' => '1',
+            'item_name' => 'テスト',
+            'registration_date' => '2022/01/25',
+            'expire_date' => '2022/02/4',
+            'finished_date' => '2022/02/01',
+            'is_deleted' => '0',
+        ];
+        DB::table('todo_items')->insert($param);
+
+        $param = [
+            'user_id' => '1',
+            'item_name' => 'テスト',
+            'registration_date' => '2022/01/25',
+            'expire_date' => '2022/02/4',
+            'finished_date' => '2022/02/01',
+            'is_deleted' => '0',
+        ];
+        DB::table('todo_items')->insert($param);
+
+
     }
 }

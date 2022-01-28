@@ -3,12 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Validator;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
 
 class TodolistController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('todo_list.index');
+        $items = DB::table('todo_items')->orderBy('id', 'asc')->Paginate(5);
+        $param = ['items' => $items];
+
+        return view('todo_list.index', $param);
     }
 
     public function post()
@@ -78,11 +85,11 @@ class TodolistController extends Controller
 
     public function remove(Request $request)
     {
-        DB::table('people')
+        DB::table('todo_list')
             ->where('id', $request->id) // 【絶対注意】deleteする値をwhereで指定しないと全てを削除してしまう。
             ->delete();
 
-        return redirect('/hello');
+        return redirect('/todo_list');
     }
 
 

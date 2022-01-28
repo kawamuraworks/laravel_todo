@@ -1,0 +1,137 @@
+/* タブレット向けレイアウト（ナビバーの992pxに統一） */
+/* 【確認】max-width: 992pxとすると991pxの時に齟齬がでる */
+@media all and (max-width: 991.5px) {
+
+    /* 全体のレイアウトに関わる */
+
+    table {
+        display: block;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    th {
+        padding: 5px 10px;
+        font-weight: 700;
+        font-size: 5px;
+    }
+
+    td {
+        padding: 8px 10px;
+        font-size: 5px;
+    }
+
+
+    .btn-border {
+        font-size: 5px;
+    }
+
+    p {
+        font-size: 5px;
+    }
+
+
+
+
+    /* <header>グローバルナビついて */
+    .top-wrapper {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .k-btn-border-nav {
+        font-size: 9px;
+        padding: 6px 9px;
+    }
+
+    .k-login-user {
+        font-size: 9px;
+    }
+
+    .form-control {
+        display: block;
+        width: 20%;
+        height: 60%;
+        font-size: 10px;
+        left: 10%;
+    }
+
+    .k-nav-link {
+        display: block;
+        margin: 0 0 5px 0;
+        width: 62px;
+        text-align: center;
+    }
+
+    .search {
+        display: block;
+        margin: 0 0 0 auto;
+        justify-content: flex-end;
+    }
+
+
+
+
+    /* 【コンテンツ】で使用 */
+    .container-main {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .k-alert {
+        align-items: center;
+    }
+    
+    
+    .table_list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .operation-buttons {
+        display: flex;
+        /* ↓これで画像幅が変更する毎にボタンの回り込みをできるようにする */
+        flex-wrap: wrap;
+        /* ↓「vw」はどのデバイスであっても強制的に〇〇%にするというコマンド */
+        width: 20vw;
+    }
+
+}
+
+
+
+/* モバイル向けレイアウト */
+@media all and (max-width: 670px) {
+
+    .k-mobile-btn {
+        flex-direction: column;
+    }
+
+    .k-mobile-margin {
+        margin: 0 0 5px 0;
+    }
+
+    td.item_name {
+        max-width: 35vw;
+    }
+
+    td.else {
+        max-width: 10vw;
+        overflow: hidden;
+    }
+
+    td.finished_date {
+        max-width: 10vw;
+        overflow: hidden;
+    }
+
+    .operation-buttons {
+        max-width: 15vw;
+    }
+
+    
+
+
+}
+

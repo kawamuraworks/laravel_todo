@@ -24,8 +24,7 @@ Route::get('todo_list/entry', 'TodolistController@entry');
 Route::post('todo_list/entry', 'TodolistController@create');
 
 Route::get('todo_list/edit', 'TodolistController@edit');
-Route::post('todo_list/entry', 'TodolistController@update');
+Route::post('todo_list/edit', 'TodolistController@update');
 
 Route::get('todo_list/del', 'TodolistController@del');
-Route::get('todo_list/del_check', 'TodolistController@del_check');
-Route::post('todo_list/del_check', 'TodolistController@remove');
+Route::post('todo_list/del', 'TodolistController@remove');

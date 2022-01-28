@@ -1,0 +1,282 @@
+/* 全体のレイアウトに関わる */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN";
+}
+
+h1 {
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+div {
+    display: block;
+}
+
+
+
+
+
+
+
+
+/* <header>グローバルナビついて */
+.top-wrapper {
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    background-color: #007bff !important;
+    background-size: cover;
+    color: white;
+    align-items: center;
+}
+
+.k-nav-color {
+    color: white !important;
+}
+
+.form-control {
+    display: block;
+    width: 75%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
+.k-btn-border-nav {
+    font-size: 16px;
+    align-items: center;
+    color: black;
+    border: 2px solid #0063ce;
+    border-radius: 0.5rem;
+    background: #fff;
+    padding: 10px 14px;
+    margin: 0;
+    transition: all 0.3s;
+}
+
+.k-btn-border-nav:hover {
+    color: #fff;
+    background: #007bff;
+}
+
+.k-dropdown-btn-nav {
+    transition: all 0.3s;
+}
+
+.k-dropdown-btn-nav:hover {
+    color: #fff;
+    background: #007bff;
+}
+
+.operation {
+    display: inline-block;
+    margin: 0 0 0 30px;
+}
+
+.search {
+    display: inline-block;
+    margin: 0 0 0 auto;
+    justify-content: flex-end;
+}
+
+
+
+
+
+
+
+/* 【コンテンツ】で使用 */
+.container-main {
+    position: relative;
+    width: 100%;
+    padding: 30px 5px;
+    display: flex;
+    justify-content: center;
+    /* ↓flexは要素を横並びにするが、縦に並べる時はこれを使う */
+    flex-direction: column;
+    /* 縦並びにした時は、align-itemsが垂直方向の要素を決める */
+    align-items: center;
+
+}
+
+.container-sub {
+    /* loginや登録確認等で幅を少し細くする際に使用 */
+    max-width: 1170px;
+    width: 40%;
+    padding: 30px 5px;
+    margin: 0 30%;
+}
+
+
+.alert {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.btn-border {
+    font-size: 16px;
+    color: black;
+    border: 2px solid #0063ce;
+    border-radius: 0.5rem;
+    background: #fff;
+    padding: 8px 12px;
+    margin: 0;
+    transition: all 0.3s;
+}
+
+.btn-border:hover {
+    color: #fff;
+    background: #007bff;
+}
+
+.k-alert {
+    width: 80%;
+    margin: 0 0 15px 0;
+    padding: 0 auto;
+    left: 10%;
+
+}
+
+.table_list {
+    width: 80%;
+    margin: 0 0 15px 0;
+    align-items: center;
+    /* ↓水平報告がwidth: 80%を超えるとスクロールするようになる */
+    overflow-x: scroll;
+}
+
+.table_back {
+    position: absolute;
+    bottom: 0%;
+    left: 10%;
+}
+
+table {
+    width: 100%;
+}
+
+table, th, td {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-collapse: collapse;
+}
+
+th {
+    vertical-align: middle;
+    padding: 10px 20px;
+    font-weight: 700;
+    color: black;
+}
+
+td {
+    vertical-align: middle;
+    width: 1px;
+    max-width: 50%;
+    padding: 15px 20px;
+    white-space: nowrap;
+    /* 長文も改行せずに続ける */
+    overflow: hidden;
+    /* 500pxを超える文字は隠す */
+    word-break: break-all;
+    /* 自動で改行しないコード */
+    position: relative;
+    /* テキストの最後まで表示するためのコード */
+}
+
+tr.even-color {
+    background-color: rgb(236, 236, 236);
+}
+
+td.finish {
+    text-decoration: line-through;
+}
+
+td.delay {
+    color: red;
+}
+
+td.item_name {
+    max-width: 400px;
+    width: 40%;
+    overflow: hidden;
+    word-break: break-all;
+    position: relative;
+}
+
+td.finished_date {
+    max-width: 400px;
+    width: 10%;
+}
+
+td.btn-border {
+    font-size: 16px;
+    color: black;
+    border: 2px solid #0063ce;
+    border-radius: 0.5rem;
+    background: #fff;
+    padding: 8px 15px;
+    margin: 0;
+    transition: all 0.3s;
+}
+
+.operation-buttons {
+    display: flex;
+}
+
+.operation-buttons div {
+    width: 30%;
+    margin: 0 3px;
+}
+
+
+/* loginで使用するデザイン */
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.form-group {
+    margin: 0 0 15px 0;
+}
+
+.form-search {
+    display: inline-block;
+}
+
+.form-group-nav {
+    display: inline-block;
+    margin: 0;
+}
+
+span {
+    display: inline-block;
+    margin: 0 0 0 30px;
+    font-size: 20px;
+    margin: 5px 0;
+}
