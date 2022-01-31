@@ -6,9 +6,9 @@
     <title>@yield('TODOリスト')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/destyle.css">
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="/css/destyle.css">
+    <link rel="stylesheet" href="/css/stylesheet.css">
+    <link rel="stylesheet" href="/css/responsive.css">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
                             <div class="operation">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item">
-                                        <a href="todo_list" class="k-btn-border-nav nav-link active k-nav-link"
+                                        <a href="/todo_list" class="k-btn-border-nav nav-link active k-nav-link"
                                             aria-current="page">作業一覧</a>
                                     </li>
                                     <li class="nav-item">

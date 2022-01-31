@@ -28,3 +28,7 @@ Route::post('todo_list/edit', 'TodolistController@update');
 
 Route::get('todo_list/del', 'TodolistController@del');
 Route::post('todo_list/del', 'TodolistController@remove');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
