@@ -18,7 +18,8 @@ Route::get('/', function () {
 Route::get('todo_list', 'TodolistController@index');
 Route::post('todo_list', 'TodolistController@post');
 
-Route::get('todo_list/search', 'TodolistController@search');
+Route::get('todo_list/search', 'TodolistController@find');
+Route::post('todo_list/search', 'TodolistController@search');
 
 Route::get('todo_list/entry', 'TodolistController@entry');
 Route::post('todo_list/entry', 'TodolistController@create');

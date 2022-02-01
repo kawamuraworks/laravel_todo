@@ -58,8 +58,9 @@
                             </div>
 
                             <div class="search">
-                                <form method="get" action="/todo_list" class="d-flex">
-                                    <input type="search" class="form-control me-2" name="search" placeholder="Search"
+                                <form method="get" action="/todo_list/search" class="d-flex">
+                                    @csrf
+                                    <input type="Search" class="form-control me-2" name="Search" placeholder="Search"
                                         aria-label="Search">
                                     <button type="submit" class="k-btn-border-nav" value="">検索</button>
                                 </form>

@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 class TodolistController extends Controller
 {
-    public function index(Request $request, Builder $builder)
+    public function index(Request $request)
     {
         $user = Auth::user();
         $items = TodoItem::all();
@@ -26,9 +26,20 @@ class TodolistController extends Controller
         return view('todo_list.index');
     }
 
-    public function search()
+    public function find(Request $request)
     {
-        return view('todo_list.index');
+        $user = Auth::user();
+        $input = TodoItem::findNull();
+        $param = ['user' => $user, 'input' => $input];
+        return view('todo_list.search', $param);
+    }
+
+    public function search(Request $request)
+    {
+        $user = Auth::user();
+        $items = TodoItem::where('item_name', $request->input)->get();
+        $param = [ 'user' => $user, 'input' => $request->input, 'items' => $items];
+        return view('todo_list.search', $param);
     }
 
     public function entry()

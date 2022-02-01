@@ -4,6 +4,14 @@
     @section('menubar')
 
     @section('content')
+        <div class="search">
+            <form method="post" action="/todo_list/search" class="d-flex">
+                @csrf
+                <input type="text" class="form-control me-2" name="input" value="">
+                <button type="submit" class="k-btn-border-nav" value="find">検索</button>
+            </form>
+        </div>
+
         <div class="table_list">
             <table>
                 <tr>
@@ -28,7 +36,7 @@
                     <td>{{ $v->item_name }}</td>
 
                     <!-- 担当者 -->
-                    <td>{{ $v->user->family_name . " " . $v->user->first_name}}</td>
+                    <td>{{ $v->user->family_name . ' ' . $v->user->first_name }}</td>
 
                     <!-- 登録日 -->
                     <td>{{ $v->registration_date }}</td>
