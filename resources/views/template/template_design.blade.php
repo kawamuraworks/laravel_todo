@@ -38,20 +38,19 @@
                                     <li class="nav-item">
                                         <a href="/todo_list/entry"
                                             class="k-btn-border-nav nav-link active k-nav-link">作業登録</a>
-                                        <!-- aria-currentの動きを確認する -->
                                     </li>
 
                                     <!-- ドロップダウン -->
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle k-nav-color" href="#" id="navbarDropdown"
                                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span class="k-login-user">ログインユーザー：
-                                                山田太郎</span>
+                                            <span class="k-login-user">ログインユーザー：{{ $user->family_name . " " . $user->first_name }}さん</span>
+
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <li><a href="todo_list"
                                                     class="dropdown-item k-dropdown-btn-nav k-dropdown-item">ユーザー一覧</a></li>
-                                            <li><a href="todo_list"
+                                            <li><a href="/logout"
                                                     class="dropdown-item k-dropdown-btn-nav k-dropdown-item">ログアウト</a></li>
                                         </ul>
                                     </li>

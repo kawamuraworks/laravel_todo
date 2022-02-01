@@ -6,14 +6,17 @@ use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\TodoItem;
+use Illuminate\Database\Eloquent\Builder;
 
 
 class TodolistController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, Builder $builder)
     {
-        $items = DB::table('todo_items')->orderBy('id', 'asc')->Paginate(5);
-        $param = ['items' => $items];
+        $user = Auth::user();
+        $items = TodoItem::all();
+        $param = ['items' => $items, 'user' => $user];
 
         return view('todo_list.index', $param);
     }

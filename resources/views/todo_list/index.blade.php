@@ -28,7 +28,7 @@
                     <td>{{ $v->item_name }}</td>
 
                     <!-- 担当者 -->
-                    <td>{{ $v->user_id }}</td>
+                    <td>{{ $v->user->family_name . " " . $v->user->first_name}}</td>
 
                     <!-- 登録日 -->
                     <td>{{ $v->registration_date }}</td>
