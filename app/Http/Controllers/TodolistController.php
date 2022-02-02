@@ -7,6 +7,7 @@ use Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\TodoItem;
+use App\User;
 use Illuminate\Database\Eloquent\Builder;
 
 
@@ -37,8 +38,13 @@ class TodolistController extends Controller
     public function search(Request $request)
     {
         $user = Auth::user();
-        $items = TodoItem::where('item_name', $request->input)->get();
-        $param = [ 'user' => $user, 'input' => $request->input, 'items' => $items];
+        $r = $request->input;
+        $items = TodoItem::whereHas('user', function($q) use($r){
+            $q->where('family_name','like','%'.$r.'%')
+            ->orWhere('first_name', 'like', '%' . $r . '%')
+            ->orWhere('item_name', 'like', '%' . $r . '%');
+        })->get();
+        $param = ['user' => $user, 'items' => $items, 'input' => $request->input];
         return view('todo_list.search', $param);
     }
 
@@ -105,6 +111,4 @@ class TodolistController extends Controller
 
         return redirect('/todo_list');
     }
-
-
 }

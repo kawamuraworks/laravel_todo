@@ -4,14 +4,6 @@
     @section('menubar')
 
     @section('content')
-        <div class="search">
-            <form method="post" action="/todo_list/search" class="d-flex">
-                @csrf
-                <input type="text" class="form-control me-2" name="input" value="{{ $input }}">
-                <button type="submit" class="k-btn-border-nav" value="find">検索</button>
-            </form>
-        </div>
-
         <div class="table_list">
             <table>
                 <tr>
