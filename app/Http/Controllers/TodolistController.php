@@ -85,15 +85,22 @@ class TodolistController extends Controller
 
     public function edit(Request $request)
     {
-        $item = DB::table('todo_items')
-            ->where('id', $request->id)->first();
+        $user = Auth::user();
+        $user_list = User::all();
+        $item = TodoItem::where('id', $request->id)->first();
+        $input = '';
+        $param = ['user' => $user, 'user_list' => $user_list, 'item' => $item, 'input' => $input];
 
-        return view('todo_list.edit', ['form' => $item]);
+        // $item = DB::table('todo_items')
+        //     ->where('id', $request->id)->first();
+
+        return view('todo_list.edit', $param);
     }
 
     public function update(Request $request)
     {
         $param = [
+            'id' => $request->id,
             'user_id' => $request->user_id,
             'item_name' => $request->item_name,
             'registration_date' => $request->registration_date,

@@ -53,13 +53,8 @@
 
                             <div>
                                 <!-- 操作（修正ボタン） -->
-                                <form method="post" action="/todo_list/edit">
-                                    @csrf
-                                    <input type="hidden" name="id">
-                                    <input type="hidden" name="item_name">
-                                    <input type="hidden" name="user_id">
-                                    <input type="hidden" name="expire_date">
-                                    <input type="hidden" name="finished_date">
+                                <form method="get" action="/todo_list/edit">
+                                    <input type="hidden" name="id" value="{{ $v->id }}">
                                     <span class="k-mobile-margin"><button type="submit"
                                             class="btn-border">修正</button></span>
                                 </form>

@@ -73,7 +73,7 @@
                 <div class="container-fluid">
                     @if ($input != '')
                         <p>検索ワード：{{ $input }}</p>
-                    @else
+                    @elseif ($input == '')
                         <p>作業一覧</p>
                     @endif
                 </div>

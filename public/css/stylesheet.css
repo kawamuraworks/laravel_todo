@@ -256,6 +256,7 @@ td.btn-border {
 /* login,登録等で使用するデザイン */
 .container-sub {
     width: 40%;
+    min-width: 580px;
     margin: 0 0 15px 0;
     align-items: center;
 }
@@ -267,8 +268,12 @@ label {
     text-align: left;
 }
 
-input.test {
+input.sub, select.sub {
     width: 100%;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color
 }
 
 .form-group {
