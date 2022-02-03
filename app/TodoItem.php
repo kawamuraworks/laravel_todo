@@ -23,27 +23,15 @@ class TodoItem extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function test()
-    {
-        return $this->hasMany('App\User', 'user_id', 'id');
-    }
-
     public function searchItems(Request $request)
     {
-        $r = $request->input;
-
-        $items = TodoItem::whereHas('user', function($q) use($r){
-            $q->where('family_name','like','%'.$r.'%')
-            ->orWhere('first_name', 'like', '%' . $r . '%')
-            ->orWhere('item_name', 'like', '%' . $r . '%');
+        $input = $request->input;
+        $items = TodoItem::whereHas('user', function($q) use($input){
+            $q->where('family_name','like','%'.$input.'%')
+            ->orWhere('first_name', 'like', '%' . $input . '%')
+            ->orWhere('item_name', 'like', '%' . $input . '%');
         })->get();
-        return $items;
-    }
-
-    public function findNull()
-    {
-        $input = '';
-        return $this->$input;
+        return $this->$items;
     }
 
 }

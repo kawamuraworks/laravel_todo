@@ -118,13 +118,6 @@ div {
 
 }
 
-.container-sub {
-    /* loginや登録確認等で幅を少し細くする際に使用 */
-    max-width: 1170px;
-    width: 40%;
-    padding: 30px 5px;
-    margin: 0 30%;
-}
 
 
 .alert {
@@ -138,13 +131,19 @@ div {
     border-radius: 0.25rem;
 }
 
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
 .btn-border {
     font-size: 16px;
     color: black;
     border: 2px solid #0063ce;
     border-radius: 0.5rem;
     background: #fff;
-    padding: 8px 12px;
+    padding: 6px 12px;
     margin: 0;
     transition: all 0.3s;
 }
@@ -254,15 +253,26 @@ td.btn-border {
 }
 
 
-/* loginで使用するデザイン */
+/* login,登録等で使用するデザイン */
+.container-sub {
+    width: 40%;
+    margin: 0 0 15px 0;
+    align-items: center;
+}
+
+
 label {
-    display: inline-block;
+    display: block;
     margin-bottom: 5px;
     text-align: left;
 }
 
+input.test {
+    width: 100%;
+}
+
 .form-group {
-    margin: 0 0 15px 0;
+    margin: 0 20px 20px 20px;
 }
 
 .form-search {

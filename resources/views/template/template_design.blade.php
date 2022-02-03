@@ -71,9 +71,12 @@
                 </nav>
 
                 <div class="container-fluid">
-                    <p>作業一覧</p>
+                    @if ($input != '')
+                        <p>検索ワード：{{ $input }}</p>
+                    @else
+                        <p>作業一覧</p>
+                    @endif
                 </div>
-
 
             </div>
         </header>

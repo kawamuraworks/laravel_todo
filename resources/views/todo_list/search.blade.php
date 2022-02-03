@@ -88,6 +88,13 @@
             </table>
         </div>
 
+        <!-- 戻るボタン -->
+        <div class="table_back">
+            @if ($input != '')
+                <a href="/todo_list" class="btn-border">戻る</a>
+            @endif
+        </div>
+
     @endsection
 </body>
 
