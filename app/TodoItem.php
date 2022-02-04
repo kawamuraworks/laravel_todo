@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Builder;
 use App\Scopes\ScopeTodoItem;
+use \Carbon\Carbon;
+
 
 class TodoItem extends Model
 {
     use Notifiable;
+
 
     /**
      * The attributes that are mass assignable.
