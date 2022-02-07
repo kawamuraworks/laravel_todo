@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('新規ユーザー登録') }}</div>
+                <div class="card-header k-login">{{ __('新規ユーザー登録') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -84,14 +84,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="is_deleted" class="col-md-4 col-form-label text-md-right">{{ __('削除(要修正)') }}</label>
-
-                            <div class="col-md-1">
-                                <input id="is_deleted" type="hidden" class="form-control" name="is_deleted" value="0">
-                                <input id="is_deleted" type="checkbox" class="form-control" name="is_deleted" value="1">
-                            </div>
-                        </div>
+                        <input id="is_deleted" type="hidden" class="form-control" name="is_deleted" value="0">
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

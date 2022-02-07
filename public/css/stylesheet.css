@@ -22,6 +22,9 @@ div {
     display: block;
 }
 
+li {
+    list-style-type: none;
+}
 
 
 
@@ -254,6 +257,15 @@ td.btn-border {
 
 
 /* login,登録等で使用するデザイン */
+.k-login {
+    font-size: 14px;
+    align-items: center;
+    color: #fff;
+    background: #007bff;
+    border: 2px solid #0063ce;
+    border-radius: 0.5rem;
+}
+
 .container-sub {
     width: 40%;
     min-width: 580px;

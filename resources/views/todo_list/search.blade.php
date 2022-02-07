@@ -106,7 +106,7 @@
 
         </div>
 
-        {{ $items->appends(['sort' => $sort])->links() }}
+        {{-- {{ $items->appends(['sort' => $sort])->links() }} --}}
         <!-- 戻るボタン -->
         <div class="table_back">
             @if ($input != '')

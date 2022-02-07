@@ -7,7 +7,17 @@
 
     @section('content')
         <div class="container-sub">
-            <div class="alert alert-info">作業内容を修正してください</div>
+            @if ($errors->any())
+                <div class="alert">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @else
+                <div class="alert alert-info">作業内容を登録してください</div>
+            @endif
 
             <form action="/todo_list/edit" method="post">
                 @csrf

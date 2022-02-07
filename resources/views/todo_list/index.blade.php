@@ -72,11 +72,12 @@
                         <div class="operation-buttons k-mobile-btn">
                             <div>
                                 <!-- 操作（完了ボタン） -->
-                                <form method="post" action="/todo_list/action">
+                                <form method="post" action="/todo_list">
                                     @csrf
-                                    <input type="hidden" name="id">
-                                    <span class="k-mobile-margin"><button type="submit" class="btn-border"
-                                            name="finished_date">完了</button></span>
+                                    <input type="hidden" name="id" value="{{ $v->id }}">
+                                    <input type="hidden" name="finished_date" value="{{ $today }}">
+                                    <span class="k-mobile-margin"><button type="submit"
+                                         class="btn-border">完了</button></span>
                                 </form>
                             </div>
 

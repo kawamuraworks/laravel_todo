@@ -50,7 +50,7 @@
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <li><a href="todo_list"
                                                     class="dropdown-item k-dropdown-btn-nav k-dropdown-item">ユーザー一覧</a></li>
-                                            <li><a href="/logout"
+                                            <li><a href="logout"
                                                     class="dropdown-item k-dropdown-btn-nav k-dropdown-item">ログアウト</a></li>
                                         </ul>
                                     </li>

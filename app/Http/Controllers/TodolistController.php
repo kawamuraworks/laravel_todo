@@ -3,14 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use \Carbon\Carbon;
 use App\TodoItem;
 use App\User;
-use Illuminate\Database\Eloquent\Builder;
-
+use App\Http\Requests\TodolistRequest;
 
 class TodolistController extends Controller
 {
@@ -26,9 +24,14 @@ class TodolistController extends Controller
         return view('todo_list.index', $param);
     }
 
-    public function post()
+    public function action(Request $request)
     {
-        return view('todo_list.index');
+        $item = TodoItem::where('id', $request->id)->first();// 【備忘録】->first()でitemのデータを取り出さないとエラーになる。
+        $form = $request->all();
+        unset($form['_token']);
+        $item->fill($form)->save();
+
+        return redirect('/todo_list');
     }
 
     // public function find(Request $request)
@@ -50,7 +53,7 @@ class TodolistController extends Controller
             ->orWhere('first_name', 'like', '%' . $input . '%')
             ->orWhere('item_name', 'like', '%' . $input . '%')
             ->orderBy($sort, 'asc');
-        })->paginate(5);
+        })->get();
         $param = ['user' => $user, 'items' => $items, 'input' => $request->input, 'sort' => $sort, 'today' => $today];
         return view('todo_list.search', $param);
         /*【備忘録】検索方法
@@ -72,7 +75,7 @@ class TodolistController extends Controller
         return view('todo_list.entry', $param);
     }
 
-    public function create(Request $request)
+    public function create(TodolistRequest $request,)
     {
         $param = [
             'user_id' => $request->user_id,
@@ -100,7 +103,7 @@ class TodolistController extends Controller
         return view('todo_list.edit', $param);
     }
 
-    public function update(Request $request)
+    public function update(TodolistRequest $request)
     {
         $item = TodoItem::where('id', $request->id)->first();// 【備忘録】->first()でitemのデータを取り出さないとエラーになる。
         $form = $request->all();
@@ -146,6 +149,12 @@ class TodolistController extends Controller
         }
 
         return view('todo_list.auth', ['message' => $msg]);
+    }
+
+    public function getLogout()
+    {
+        Auth::logout();
+        return redirect('/todo_list');
     }
 
 }

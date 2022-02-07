@@ -7,7 +7,17 @@
 
     @section('content')
         <div class="container-sub">
-            <div class="alert alert-info">作業内容を登録してください</div>
+            @if ($errors->any())
+                <div class="alert">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @else
+                <div class="alert alert-info">作業内容を登録してください</div>
+            @endif
 
             <form action="/todo_list/entry" method="post">
                 @csrf
@@ -19,7 +29,7 @@
                 <div class="form-group">
                     <label for="user_id">担当者</label>
                     <select name="user_id" id="user_id" class="sub">
-                        <option>--選択してください</option>
+                        <option value="">--選択してください</option>
                         @foreach ($user_list as $v)
                             <option value="{{ $v->id }}">{{ $v->family_name . ' ' . $v->first_name }}</option>
                         @endforeach
