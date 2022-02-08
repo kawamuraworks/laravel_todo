@@ -114,6 +114,7 @@
             @endif
         </div>
 
+        {{ $items->appends(['sort' => $sort])->links() }}
     @endsection
 </body>
 

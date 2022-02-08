@@ -34,14 +34,6 @@ class TodolistController extends Controller
         return redirect('/todo_list');
     }
 
-    // public function find(Request $request)
-    // {
-    //     $user = Auth::user();
-    //     $input = TodoItem::findNull();
-    //     $param = ['user' => $user, 'input' => $input];
-    //     return view('todo_list.search', $param);
-    // }
-
     public function search(Request $request)
     {
         $user = Auth::user();
@@ -53,7 +45,7 @@ class TodolistController extends Controller
             ->orWhere('first_name', 'like', '%' . $input . '%')
             ->orWhere('item_name', 'like', '%' . $input . '%')
             ->orderBy($sort, 'asc');
-        })->get();
+        })->paginate(5);
         $param = ['user' => $user, 'items' => $items, 'input' => $request->input, 'sort' => $sort, 'today' => $today];
         return view('todo_list.search', $param);
         /*【備忘録】検索方法
@@ -89,6 +81,7 @@ class TodolistController extends Controller
         DB::table('todo_items')->insert($param);
 
         return redirect('/todo_list');
+        /* 【備忘録】Modelを使用せずにControllerでDBに書き込む方法 */
     }
 
     public function edit(Request $request)
@@ -129,26 +122,6 @@ class TodolistController extends Controller
     {
         TodoItem::where('id', $request->id)->delete();
         return redirect('/todo_list');
-    }
-
-    public function getAuth(Request $request)
-    {
-        $param = ['message' => 'ログインして下さい。'];
-        return view('todo_list.auth', $param);
-    }
-
-    public function postAuth(Request $request)
-    {
-        $email = $request->email;
-        $password = $request->password;
-
-        if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            $msg = 'ログインしました。(' . Auth::user()->name . ')';
-        } else {
-            $msg = 'ログインに失敗しました。';
-        }
-
-        return view('todo_list.auth', ['message' => $msg]);
     }
 
     public function getLogout()
