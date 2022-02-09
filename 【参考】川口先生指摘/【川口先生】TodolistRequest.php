@@ -28,7 +28,7 @@ class TodolistRequest extends FormRequest
      */
     public function rules()
     {
-        // エラーが表示される順番はここで決まる。tableの順番は関係ない。
+    // ここで順番を変更できます
         return [
             'item_name' => ['required'],
             'user_id' => ['filled'],

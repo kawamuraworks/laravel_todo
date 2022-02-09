@@ -42,16 +42,16 @@ class TodoItem extends Model
         return $this->$items;
     }
     */
-
-    /* 【備忘録】2ページ目等に移動する際に$sortの値がないと次のページでは検索が機能しない */
-    public static function search($request,$input,$sort){
-        $items = TodoItem::whereHas('user', function($q) use($input, $sort){
-            $q->where('family_name','like','%'.$input.'%')
-            ->orWhere('first_name', 'like', '%' . $input . '%')
-            ->orWhere('item_name', 'like', '%' . $input . '%')
-            ->orderBy($sort, 'asc');
-        })->paginate(5);
-        return $items;
-      }
+    /* 追加しております 川口 */
+    public function search($request,$input,$sort){
+      $user = Auth::user();
+      $items = TodoItem::whereHas('user', function($q) use($input, $sort){
+          $q->where('family_name','like','%'.$input.'%')
+          ->orWhere('first_name', 'like', '%' . $input . '%')
+          ->orWhere('item_name', 'like', '%' . $input . '%')
+          ->orderBy($sort, 'asc');
+      })->paginate(5);
+      return $items;
+    }
 
 }

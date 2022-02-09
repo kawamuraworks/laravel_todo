@@ -106,6 +106,7 @@
 
         </div>
 
+        {{-- {{ $items->appends(['sort' => $sort])->links() }} --}}
         <!-- 戻るボタン -->
         <div class="table_back">
             @if ($input != '')
@@ -114,9 +115,6 @@
         </div>
         <!-- ここでsearchの値を持たせます 川口 -->
         {{ $items->appends(['sort' => $sort,'input' => $input])->links() }}
-
-        {{-- 【備忘録】次のページに移動する際にinputの値も一緒に送らないと次のページでは検索内容がリセットされる
-        {{ $items->appends(['sort' => $sort])->links() }} --}}
     @endsection
 </body>
 
