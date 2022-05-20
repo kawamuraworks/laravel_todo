@@ -109,7 +109,38 @@ class TodolistController extends Controller
                 SQL文でDBに登録するため、timestampの内容は反映されない。
                 timestampを登録するにはfill()->save()としなければならない。
         */
+    /* 2022.03.25追記_【参考】河村工芸Detailコントローラ */
+    // $detail = new Detail();
+    // $detail->fill($request->all());
+    // $detail->fill(['user_id' => auth()->user()->id]);
+    // unset($detail['_token']);
+    // $detail->save();
+
+    /* 【備忘録】*/
+    // ①$request->all()でDB登録する値を取得
+    // ②user_idはuserと連携しているので別途取得
+    // ③トークンはDBに保存しないので、unset
+    // 下のように1個ずつ書いても可
+
+    // $detail = new Detail();
+    // $detail->user_id = auth()->user()->id;
+    // $detail->headline = $request->headline;
+    // $detail->period = $request->period;
+    // $detail->cs_request = $request->cs_request;
+    // $detail->lead = $request->lead;
+    // $detail->location = $request->location;
+    // $detail->type1 = $request->type1;
+    // $detail->type2 = $request->type2;
+    // $detail->type3 = $request->type3;
+    // $detail->content_tag1 = $request->content_tag1;
+    // $detail->content_tag2 = $request->content_tag2;
+    // $detail->content_tag3 = $request->content_tag3;
+
+
+    return redirect()->route('admin.create')->with('message', '投稿を作成しました');
+
     }
+
 
     public function edit(Request $request)
     {

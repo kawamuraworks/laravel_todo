@@ -1,4 +1,4 @@
-<p align="center"><a href="https://kakunin-kougei.herokuapp.com/" target="_blank"><img src="public/images/read_me.jpg" width="830"></a></p>
+<p align="center"><img src="public/read_me.jpg" width="830"></p>
 
 
 
