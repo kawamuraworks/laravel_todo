@@ -1,78 +1,81 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://kakunin-kougei.herokuapp.com/" target="_blank"><img src="public/images/read_me.jpg" width="830"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# 共有型ToDo管理アプリケーションです
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+事業所の開発実習になります。
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+文字や画像の登録を行うだけで実績ページの作成が可能です。
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# 使い方
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**１.管理者画面を開く**
 
-## Laravel Sponsors
+　画面最下部にあるログインより管理者画面に移ってください。
+ 
+ 　[こちらのリンクから直接ログイン画面に移動できます。](http://kakunin-kougei.herokuapp.com/login)
+  
+　　↓ ログイン情報は以下の通りです。
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+　　メールアドレス： test@yahoo.co.jp
+ 
+　　パスワード　　： test1234
+  　
+ 
+**２.管理画面一覧より希望するページへ移動してください**
+　
+ 
+**３.新規実績登録画面**
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+　見出し・施工期間は、画像の上に表示されている文字になります。
+ 
+　以降は、入力欄と表示順序が対応しています。
+ 
+　画像のアップロードは、**最大1MB**としてください。
+ 
+　※新規実績登録後は、自動で実績変更選択画面へ移動します。
+　
+ 
+**４.実績変更選択画面**
 
-## Contributing
+　内容修正する実績を選択してください。
+ 
+　新規実績登録された物件は、実績一覧の2番目に非表示としてDBに登録されています。
+ 
+　登録されたレイアウトは、以下のアドレスより確認ができます。
+ 
+　*http://kakunin-kougei.herokuapp.com/work/index?priority=2*
+　
+ 
+　レイアウトに問題が無ければ、登録された実績変更ページに移動し、「表示切替」「表示順序」を変更してください。
+ 
+　**※内容変更をする場合、写真を再登録する必要があります。**
+ 
+ 　 Herokuでは画像をbase64エンコードとしてDBに保存する必要があり、現在画像を再登録することで更新できる記述となっています。
+   
+  　シンボリックリンクが使用でき、画像を登録できる場合は再登録の必要がないことを確認しています。
+   　
+   
+**５.お願い**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+　動作確認のため新規実績登録を行った場合は確認後、登録実績の削除をお願いします。
+ 
+　**現在、登録されている実績の変更は行わないでください。**
+ 　
+# 実装環境
 
-## Code of Conduct
+　バックエンド　： PHP(8.0.10) , Laravel9  , MySQL
+ 
+　フロントエンド： HTML・CSS , javascript , Bootstrap5
+ 
+# ユーザー利用環境
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+　レスポンシブデザインとなっていますので、スマホやタブレットにも対応しています。
 
-## Security Vulnerabilities
+# SSL設定について
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+　ポートフォリオ公開のため、Herokuで無料公開としておりSSL設定がされていません。
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+　成果品の公開ではSSL設定も実装する予定です。
